@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thiệp mời</title>
+  <style>
+    body {
+      margin: 0; 
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out; /* hiệu ứng xuất hiện */
+      max-width: 100%;
+    }
+    img {
+      max-width: 100%;
+      max-height: 90vh; /* không vượt quá chiều cao màn hình */
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      animation: zoomIn 1.2s ease; /* hiệu ứng zoom nhẹ */
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .btn-confirm {
+      background: #e63946;
+    }
+    .btn-confirm:hover {
+      background: #c71c30;
+      animation: pulse 0.6s infinite;
+    }
+    .btn-map {
+      background: #457b9d;
+    }
+    .btn-map:hover {
+      background: #1d3557;
+      animation: pulse 0.6s infinite;
+    }
+
+    /* Hiệu ứng fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Hiệu ứng zoom-in */
+    @keyframes zoomIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Hiệu ứng rung (pulse) */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Ảnh thiệp mời -->
+    <img src="image.png" alt="Thiệp mời">
+
+    <!-- Các nút bấm -->
+    <div class="buttons">
+      <!-- Nút popup -->
+      <button class="btn btn-confirm" onclick="alert('Cảm ơn vi da den!')">
+        🙄 Nhấn cái để biết na
+      </button>
+
+      <!-- Nút xem bản đồ -->
+      <a href="https://www.google.com/maps/place/H%E1%BA%A3i+S%E1%BA%A3n+X%C3%B3m+Ch%C3%A0i/@16.0362967,108.2320594,18z/data=!3m1!4b1!4m6!3m5!1s0x3142198fa01b2377:0xf8357d2de3aa9663!8m2!3d16.0362952!4d108.2328249!16s%2Fg%2F11k11mt49w?entry=ttu"
+         target="_blank" rel="noopener noreferrer" class="btn btn-map">
+        📍 Xem địa điểm
+      </a>
+    </div>
+  </div>
+</body>
+</html>
